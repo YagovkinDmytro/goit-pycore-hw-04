@@ -11,13 +11,15 @@ def total_salary(path):
             try:
                 total += int(employee[1])
             except (ValueError, IndexError):
-                raise ValueError(f"Error in line: {employee}")
+                raise ValueError(f"Error in data: {employee}")
         
         if len(employees_info) == 0:
             raise ValueError("File is empty or contains invalid data")
         
-        average = int(total / len(employees_info)) 
-        return total, average
+        average = int(total / len(employees_info))
+        salary_info = (total, average)
+        print(type(salary_info))
+        return salary_info
         
     
 
